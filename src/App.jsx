@@ -8,6 +8,7 @@ function App() {
     <>
       
       <h1>Welcome to Agrolink</h1>
+      <p>Empowering farmers and you and achieve more!</p>
      
     </>
   )
