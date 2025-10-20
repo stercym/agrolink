@@ -33,11 +33,17 @@ jobs:
           KEY=$(git log -1 --pretty=%B | grep -oE '[A-Z]+-[0-9]+' | head -1 || true)
           echo "KEY=$KEY" >> $GITHUB_OUTPUT
 
-      - name: Transition Jira issue to Done
+      - name: Transition Jira issue
         if: steps.jirakey.outputs.KEY != ''
+        env:
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
         run: |
-          curl -X POST \
-            -H "Authorization: Basic $(echo -n ${{ secrets.JIRA_USER_EMAIL }}:${{ secrets.JIRA_API_TOKEN }} | base64)" \
+          AUTH=$(echo -n "$JIRA_USER_EMAIL:$JIRA_API_TOKEN" | base64)
+          curl -v -X POST \
+            -H "Authorization: Basic $AUTH" \
             -H "Content-Type: application/json" \
             --data '{"transition":{"id":"31"}}' \
-            "${{ secrets.JIRA_BASE_URL }}/rest/api/3/issue/${{ steps.jirakey.outputs.KEY }}/transitions"
+            "$JIRA_BASE_URL/rest/api/3/issue/${{ steps.jirakey.outputs.KEY }}/transitions"
+
