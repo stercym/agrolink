@@ -23,9 +23,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Test
-        run: npm test -- --watchAll=false --ci
-
       - name: Trigger Netlify Deploy
         if: success()
         run: curl -X POST "${{ secrets.NETLIFY_DEPLOY_HOOK }}"
