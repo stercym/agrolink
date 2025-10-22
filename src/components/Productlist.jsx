@@ -1,3 +1,4 @@
+// ProductList.js
 import React, { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 
@@ -7,9 +8,9 @@ function ProductList() {
 
   useEffect(() => {
     fetch("http://127.0.0.1:5000/products")
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => setProducts(data))
-      .catch((error) => console.error("Error fetching products:", error));
+      .catch((err) => console.error("Error fetching products:", err));
   }, []);
 
   const handleSearchChange = (e) => {
@@ -22,7 +23,7 @@ function ProductList() {
 
   return (
     <div>
-      <h1>Product List</h1>
+      <h1>Product Catalog</h1>
 
       <input
         type="text"
@@ -43,4 +44,5 @@ function ProductList() {
 }
 
 export default ProductList;
+
 
