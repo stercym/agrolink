@@ -1,0 +1,45 @@
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom right, white 70%, #10b65c 70%);
+  padding: 60px 8%;
+  height: 100%;
+}
+
+.about-content {
+  flex: 1;
+  color: #00a651;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.about-highlight {
+  color: #00a651;
+}
+
+.about-content p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #00a651;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1px;
+}
+
+.about-image img {
+  width: 400px;
+  width: 600px;
+  height: auto;
+  object-fit:cover;
+}

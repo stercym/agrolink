@@ -1,17 +1,22 @@
-import { useState } from 'react'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
+import About from "./components/About";
+import Working from "./components/Working";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      
-      <h1>Welcome to Agrolink</h1>
-      <p>Empowering farmers and you to achieve more!</p>
-     
-    </>
-  )
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/how-it-works" element={<Working />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
