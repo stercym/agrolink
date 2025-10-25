@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
+import logo from "../assets/logo.png"; // ✅ adjust path if needed
 
 function Navbar() {
   const navigate = useNavigate();
@@ -14,7 +15,10 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <h2 className="logo">AgroLink</h2>
+      {/* ✅ Replace text with image */}
+      <div className="logo-container" onClick={() => navigate("/")}>
+        <img src={logo} alt="AgroLink Logo" className="logo-img" />
+      </div>
 
       <div className="nav-links">
         {!token ? (

@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// zakarie's branch components 
 import Navbar from "./components/Navbar";
 import Registration from "./components/Registration";
 import Login from "./components/Login";
@@ -11,6 +13,11 @@ import Profile from "./components/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import "./App.css";
 
+// ✅ Include development branch components
+import Home from "./components/Home";
+import About from "./components/About";
+import Working from "./components/Working";
+
 function App() {
   return (
     <Router>
@@ -19,6 +26,8 @@ function App() {
         <Routes>
           {/* Public routes */}
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/how-it-works" element={<Working />} />
           <Route path="/register" element={<Registration />} />
           <Route path="/login" element={<Login />} />
           <Route path="/verification" element={<Verification />} />
@@ -59,16 +68,6 @@ function App() {
         </Routes>
       </div>
     </Router>
-  );
-}
-
-// Small landing placeholder
-function Home() {
-  return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Welcome to AgroLink</h1>
-      <p>Empowering farmers, buyers, and delivery partners together!</p>
-    </div>
   );
 }
 
