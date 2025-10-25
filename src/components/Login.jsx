@@ -1,7 +1,7 @@
 // src/components/Login.jsx
 import React, { useState } from "react";
 import "./Login.css";
-import { api } from "/home/zakarie/agrolink/Config.jsx";
+import { api } from "../../Config";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {

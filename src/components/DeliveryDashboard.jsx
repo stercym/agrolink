@@ -1,7 +1,7 @@
 // src/components/DeliveryDashboard.jsx
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api } from "/home/zakarie/agrolink/Config.jsx";
+import { api } from "../../Config";
 import "./DashboardsAndProfile.css";
 
 const DeliveryDashboard = () => {
