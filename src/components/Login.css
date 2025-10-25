@@ -1,0 +1,91 @@
+/* src/components/Login.css */
+
+body {
+  margin: 0%;
+  padding: 0%;
+}
+
+.login-container {
+  background-color: #0aaa40;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  background-color: #ffffff;
+  border-radius: 40px;
+  width: 350px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  color: #0aaa40;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.login-card h3 {
+  text-align: center;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+label {
+  color: #000000;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+input {
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  outline: none;
+}
+
+button {
+  background-color: #0aaa40;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.signup-link {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #000000;
+}
+
+.signup-link span {
+  color: #0aaa40;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}

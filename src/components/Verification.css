@@ -1,0 +1,40 @@
+.verification-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: #f8f8f8;
+}
+
+.verification-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.verification-card.success h2 {
+  color: #0AAA40;
+}
+
+.verification-card.error h2 {
+  color: #ff4c4c;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #0AAA40;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #088A35;
+}
