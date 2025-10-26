@@ -1,0 +1,33 @@
+src/
+├── components/
+│   ├── cart/
+│   │   ├── CartPage.jsx
+│   │   ├── CartItem.jsx
+│   │   └── CartSummary.jsx
+│   ├── checkout/
+│   │   ├── CheckoutPage.jsx
+│   │   ├── CheckoutForm.jsx
+│   │   ├── PaymentMethodSelector.jsx
+│   │   └── OrderReview.jsx
+│   ├── payment/
+│   │   ├── MpesaPaymentModal.jsx
+│   │   ├── PaymentStatus.jsx
+│   │   └── PaymentConfirmation.jsx
+│   ├── orders/
+│   │   ├── OrderHistoryPage.jsx
+│   │   ├── OrderCard.jsx
+│   │   ├── OrderDetailsPage.jsx
+│   │   └── OrderTracking.jsx
+│   ├── chat/
+│   │   ├── ChatWidget.jsx
+│   │   ├── ChatWindow.jsx
+│   │   ├── MessageBubble.jsx
+│   │   └── TypingIndicator.jsx
+│   └── shared/
+│       ├── Loader.jsx
+│       ├── AlertMessage.jsx
+│       └── ProtectedRoute.jsx
+├── services/
+│   └── ApiService.js
+
+

@@ -1,0 +1,18 @@
+.container{
+  width:720px;
+  background:var(--white);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:var(--shadow);
+}
+.container h2{color:var(--primary-green);margin:0 0 12px}
+.form{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.form input, .form textarea{
+  padding:10px;border-radius:8px;border:1px solid #e6f3ea;outline:none;background:#fbfff9
+}
+.cta{background:var(--primary-green);color:var(--white);padding:12px;border-radius:8px;border:none;cursor:pointer}
+.methods{display:flex;gap:12px;margin:16px 0}
+.method{display:flex;align-items:center;gap:8px;color:#0b3a2a}
+.review{background:#f8fff8;padding:12px;border-radius:8px;margin-bottom:12px}
+.reviewItem{display:flex;justify-content:space-between;padding:6px 0}
+.total{margin-top:10px;font-weight:700;color:var(--primary-green)}

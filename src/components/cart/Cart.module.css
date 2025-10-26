@@ -1,0 +1,29 @@
+.cartPage {
+  background: #fff;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #c8e6c9;
+  padding: 10px 0;
+}
+
+.cartItem button {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.cartSummary {
+  text-align: center;
+  margin-top: 20px;
+}
