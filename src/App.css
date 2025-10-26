@@ -1,16 +1,6 @@
-.app-container {
-  background-color: #ffffff;
-  color: #0a3d2e;
+.app {
+  background-color: #f9fff9;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 40px;
-  font-family: "Poppins", sans-serif;
-}
-
-.not-found {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #e74c3c;
+  font-family: "Inter", sans-serif;
+  color: #1b5e20;
 }
