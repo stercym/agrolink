@@ -1,0 +1,61 @@
+.agent-dashboard {
+  padding: 20px;
+  background-color: #f9fff9;
+  min-height: 100vh;
+}
+
+.agent-dashboard h2 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.location-info {
+  text-align: center;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.orders-table th {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.orders-table tr:hover {
+  background-color: #e8f5e9;
+}
+
+.status.processing {
+  color: orange;
+}
+
+.status.en_route {
+  color: blue;
+}
+
+.status.delivered {
+  color: green;
+}
+
+select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
