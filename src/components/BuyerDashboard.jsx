@@ -1,8 +1,7 @@
 // src/components/BuyerDashboard.jsx
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api } from "../../Config";
-// import { api } from "/home/zakarie/agrolink/Config.jsx";
+import { api } from "../Config";
 import "./DashboardsAndProfile.css";
 
 const BuyerDashboard = () => {

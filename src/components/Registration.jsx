@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Registration.css";
-import { api } from "../../Config";
+import { api } from "../Config.jsx";
 import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
