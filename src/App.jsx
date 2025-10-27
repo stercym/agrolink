@@ -20,6 +20,10 @@ import DeliveryDashboard from "./components/DeliveryDashboard";
 import Profile from "./components/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 
+import DeliveryDashboardAgent from "./components/DeliveryDashboardAgent";
+import DeliveryTrackingBuyer from "./components/DeliveryTrackingBuyer";
+import DeliveryGroupSummary from "./components/DeliveryGroupSummary";
+
 import "./App.css";
 
 function AgentDashboardWrapper() {
@@ -33,7 +37,7 @@ function TrackingWrapper() {
 }
 
 
-export default function App() {
+function App() {
   return (
     <Router>
       <NavBar />
@@ -52,6 +56,11 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/verification" element={<Verification />} />
           <Route path="/signin" element={<Login />} />
+          <Route path="/agent/:id/dashboard" element={<AgentDashboardWrapper />} />
+          <Route path="/track/:orderId" element={<TrackingWrapper />} />
+          <Route path="/delivery-groups" element={<DeliveryGroupSummary />} />
+          <Route path="/delivery/agent/:id" element={<AgentDashboardWrapper />} />
+          <Route path="/delivery/track/:orderId" element={<TrackingWrapper />} />
           
 
 
@@ -93,3 +102,4 @@ export default function App() {
     </Router>
   );
 }
+export default App; 

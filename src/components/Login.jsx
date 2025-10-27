@@ -1,8 +1,7 @@
-// src/components/Login.jsx
 import React, { useState } from "react";
 import "./Login.css";
-// import { api } from "/home/zakarie/agrolink/Config.jsx";
 import { useNavigate } from "react-router-dom";
+// import { api } from "https://agrolink-backend-nezp.onrender.com";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -36,7 +35,7 @@ const Login = () => {
       // Redirect by role
       if (res.data.role === "Buyer") navigate("/buyer-dashboard");
       else if (res.data.role === "Farmer") navigate("/farmer-dashboard");
-      else if (res.data.role === "Delivery") navigate("/delivery-dashboard");
+      else if (res.data.role === "Delivery") navigate(`/delivery-dashboard/${res.data.id}`);
     } catch (error) {
       setErrorMsg(error.response?.data?.message || "Login failed. Try again.");
     } finally {
