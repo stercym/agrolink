@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
-import config from "../Config.jsx";
+import { api } from "../Config.jsx";
 import { useNavigate } from "react-router-dom";
-// import { api } from "https://agrolink-backend-nezp.onrender.com";
 
 const Login = () => {
   const navigate = useNavigate();
