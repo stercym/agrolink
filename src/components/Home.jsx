@@ -38,9 +38,20 @@ function Home() {
           <h2>
             From farm <span className="highlight">to table...</span>
           </h2>
+
           <div className="hero-buttons">
-            <a href="/register-farmer" className="btn-green">Join as Farmer</a>
-            <a href="/register-buyer" className="btn-green">Join as Buyer</a>
+            <button
+              className="btn-green"
+              onClick={() => navigate("/register", { state: { role: "Farmer" } })}
+            >
+              Join as Farmer
+            </button>
+            <button
+              className="btn-green"
+              onClick={() => navigate("/register", { state: { role: "Buyer" } })}
+            >
+              Join as Buyer
+            </button>
           </div>
         </div>
 

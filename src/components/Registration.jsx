@@ -1,4 +1,3 @@
-// src/components/Registration.jsx
 import React, { useState } from "react";
 import "./Registration.css";
 // import { api } from "/home/zakarie/agrolink/Config.jsx";
@@ -123,3 +122,5 @@ const Registration = () => {
 };
 
 export default Registration;
+
+
