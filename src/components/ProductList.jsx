@@ -1,3 +1,4 @@
+// src/components/ProductList.jsx
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getProducts } from "./api";
@@ -14,7 +15,6 @@ function ProductList() {
     getProducts().then((data) => setProducts(data || []));
   }, []);
 
-  
   const filteredProducts = products.filter((p) => {
     const nameMatch = p.name?.toLowerCase().includes(searchTerm.toLowerCase());
     const categoryMatch = filterCategory
@@ -60,18 +60,14 @@ function ProductList() {
         onChange={(e) => setFilterPrice(e.target.value)}
       />
 
-      
       <div>
         <Link to="/products/new">
           <button>Create Product</button>
         </Link>
       </div>
 
-      
       {filteredProducts.length > 0 ? (
-        filteredProducts.map((p) => (
-          <ProductCard key={p.id} product={p} />
-        ))
+        filteredProducts.map((p) => <ProductCard key={p.id} product={p} />)
       ) : (
         <p>No products found</p>
       )}
@@ -80,9 +76,4 @@ function ProductList() {
 }
 
 export default ProductList;
-
-
-
-
-
 
