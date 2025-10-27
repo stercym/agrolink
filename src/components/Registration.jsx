@@ -1,7 +1,7 @@
 // src/components/Registration.jsx
 import React, { useState } from "react";
 import "./Registration.css";
-import { api } from "/home/zakarie/agrolink/Config.jsx";
+// import { api } from "/home/zakarie/agrolink/Config.jsx";
 import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
