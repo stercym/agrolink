@@ -1,4 +1,3 @@
-// src/Config.jsx
 import axios from "axios";
 
 const BASE_URL =

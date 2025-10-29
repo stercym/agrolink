@@ -1,4 +1,3 @@
-/* ===== BASE NAVBAR ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -24,7 +23,7 @@
   object-fit: contain;
 }
 
-/* ===== NAV LINKS ===== */
+
 .nav-links-wrapper {
   display: flex;
   align-items: center;
@@ -79,8 +78,11 @@
   background-color: #0aaa40;
   color: #ffffff;
 }
-
-/* ===== MOBILE MENU BUTTON ===== */
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .menu-toggle {
   display: none;
   background: none;
@@ -89,8 +91,7 @@
   color: #0aaa40;
   cursor: pointer;
 }
-
-/* ===== RESPONSIVE ===== */
+/* Responsive styles */
 @media (max-width: 900px) {
   .navbar {
     flex-wrap: wrap;

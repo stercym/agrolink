@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from "react-router-dom";
 
-// ✅ Components
+// Components
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -18,20 +18,20 @@ import DeliveryDashboardAgent from "./components/DeliveryDashboardAgent";
 import DeliveryTrackingBuyer from "./components/DeliveryTrackingBuyer";
 import DeliveryGroupSummary from "./components/DeliveryGroupSummary";
 
-// ✅ Pages
+// Pages
 import CartPageContainer from "./pages/CartPageContainer";
 import CheckoutPageContainer from "./pages/CheckoutPageContainer";
 import OrderPageContainer from "./pages/OrderPageContainer";
 import ChatPageContainer from "./pages/ChatPageContainer";
 
-// ✅ Product management
+// Product management
 import ProductList from "./components/ProductList";
 import ProductForm from "./components/ProductForm";
 import ProductDetails from "./components/ProductDetails";
 
 import "./App.css";
 
-// ✅ Wrapper components for route params
+// Wrapper components for route params
 function AgentDashboardWrapper() {
   const { id } = useParams();
   return <DeliveryDashboardAgent agentId={id} />;
@@ -51,33 +51,33 @@ function App() {
       <NavBar />
       <div className="app-root">
         <Routes>
-          {/* 🏠 Public Pages */}
+          {/* Public Pages */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/how-it-works" element={<Working />} />
 
-          {/* 🛒 E-commerce Pages */}
+          {/* E-commerce Pages */}
           <Route path="/carts" element={<CartPageContainer />} />
           <Route path="/checkout" element={<CheckoutPageContainer />} />
           <Route path="/orders" element={<OrderPageContainer />} />
           <Route path="/chat" element={<ChatPageContainer />} />
 
-          {/* 👤 Auth Pages */}
+          {/* Auth Pages */}
           <Route path="/register" element={<Registration />} />
           <Route path="/login" element={<Login />} />
           <Route path="/verification" element={<Verification />} />
 
-          {/* 🚚 Delivery Routes */}
+          {/* Delivery Routes */}
           <Route path="/agent/:id/dashboard" element={<AgentDashboardWrapper />} />
           <Route path="/track/:orderId" element={<TrackingWrapper />} />
           <Route path="/delivery-groups" element={<DeliveryGroupSummary />} />
 
-          {/* 🧑‍🌾 Product Management */}
+          {/* Product Management */}
           <Route path="/products" element={<ProductList key={refresh} />} />
           <Route path="/products/new" element={<ProductForm onAdded={handleAdded} />} />
           <Route path="/products/:id" element={<ProductDetails />} />
 
-          {/* 🔒 Protected Dashboards */}
+          {/* Protected Dashboards */}
           <Route
             path="/buyer-dashboard"
             element={

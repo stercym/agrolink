@@ -20,7 +20,7 @@ function NavBar() {
         <img src={logo} alt="Agrolink Logo" className="logo-img" />
       </div>
 
-      {/* ✅ Mobile toggle button */}
+      {/* Mobile toggle button */}
       <button
         className="menu-toggle"
         onClick={() => setMenuOpen(!menuOpen)}
@@ -29,12 +29,14 @@ function NavBar() {
         ☰
       </button>
 
-      {/* ✅ Links wrapper that collapses on mobile */}
+      {/* Links wrapper that collapses on mobile */}
       <div className={`nav-links-wrapper ${menuOpen ? "show" : ""}`}>
         <ul className="nav-links">
           <li><Link to="/" className="nav-item">Home</Link></li>
           <li><Link to="/about" className="nav-item">About</Link></li>
           <li><Link to="/how-it-works" className="nav-item">How It Works</Link></li>
+          <li><Link to="/products" className="nav-item">Products</Link></li>
+          <li><Link to="/carts" className="nav-item">Cart</Link></li>
         </ul>
 
         <div className="nav-auth">

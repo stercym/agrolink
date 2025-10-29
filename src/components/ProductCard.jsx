@@ -14,6 +14,10 @@ function ProductCard({ product }) {
     farmer_id,
   } = product;
 
+  const priceNumber = parseFloat(price);
+  if (isNaN(priceNumber)) {
+    console.error(`Invalid price for product ${name}: ${price}`);
+  }
   return (
     <Link
       to={`/products/${id}`}

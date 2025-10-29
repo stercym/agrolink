@@ -3,8 +3,15 @@ const API_URL = "http://127.0.0.1:5000";
 // Get all products
 function getProducts() {
   return fetch(`${API_URL}/products`)
-    .then((res) => res.json())
-    .catch((err) => console.error("Error fetching products:", err));
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to fetch products");
+      return res.json();
+    })
+    .catch((err) => {
+      console.error("Error fetching products:", err);
+      // RETURN safe default so callers don't get `undefined`
+      return [];
+    });
 }
 
 // Get a single product
