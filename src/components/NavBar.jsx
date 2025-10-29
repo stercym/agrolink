@@ -40,7 +40,7 @@ function NavBar() {
         <div className="nav-auth">
           {!token ? (
             <>
-              <Link to="/register" className="nav-item">Register</Link>
+              {/* <Link to="/register" className="nav-item">Register</Link> */}
               <Link to="/login" className="signin-btn">Login</Link>
             </>
           ) : (
