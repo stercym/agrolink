@@ -92,8 +92,6 @@ See the [Swagger UI](http://127.0.0.1:5000/api/docs) for the complete contract, 
 | `CLOUD_NAME`, `CLOUD_API_KEY`, `CLOUD_API_SECRET` | Cloudinary product image uploads |
 | `VITE_GOOGLE_MAPS_API_KEY` | Google Maps key used by the React app |
 
-Refer to `.env.example` files (create them if needed) for the full list.
-
 ---
 
 ## Deployment Notes
