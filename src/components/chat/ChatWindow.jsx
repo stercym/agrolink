@@ -1,4 +1,3 @@
-// src/components/chat/ChatWindow.jsx
 import React, { useState, useRef, useEffect } from "react";
 import MessageBubble from "./MessageBubble";
 import TypingIndicator from "./TypingIndicator";
@@ -55,3 +54,4 @@ const ChatWindow = ({ messages, onSendMessage, onTyping, typing, onClose }) => {
 };
 
 export default ChatWindow;
+

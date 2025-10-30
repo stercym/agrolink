@@ -23,7 +23,6 @@
   object-fit: contain;
 }
 
-
 .nav-links-wrapper {
   display: flex;
   align-items: center;
@@ -78,11 +77,13 @@
   background-color: #0aaa40;
   color: #ffffff;
 }
+
 .nav-auth {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
+
 .menu-toggle {
   display: none;
   background: none;
@@ -91,7 +92,7 @@
   color: #0aaa40;
   cursor: pointer;
 }
-/* Responsive styles */
+
 @media (max-width: 900px) {
   .navbar {
     flex-wrap: wrap;

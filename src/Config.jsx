@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const BASE_URL =
+const BASE_URL = "https://agrolinkapp.netlify.app/"
   window.location.hostname === "localhost"
-    ? "http://127.0.0.1:5000" // local backend
-    : "https://agrolink-backend-kjb1.onrender.com"; // deployed backend
+    ? "http://127.0.0.1:5000" 
+    : "https://agrolink-backend-nezp.onrender.com"; 
 
 const api = axios.create({
   baseURL: BASE_URL,

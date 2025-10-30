@@ -1,24 +1,50 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import CartSummary from "./CartSummary";
+import { useCart } from "./CartContext";
 import styles from "./Cart.module.css";
 
 
-export default function CartPage() {
-  const [items, setItems] = useState([
-    { id: 1, name: "Tomatoes", price: 100, qty: 2 },
-    { id: 2, name: "Potatoes", price: 150, qty: 1 },
-  ]);
+function CartPage() {
+  const { items, removeItem, updateQuantity, clearCart, isSyncing, lastSyncError } = useCart();
 
-  const handleRemove = (id) => setItems(items.filter((item) => item.id !== id));
+  if (!items.length) {
+    return (
+      <section className={styles.cartPage}>
+        <h2>Your Cart</h2>
+        <p className={styles.emptyCopy}>Your basket is empty right now.</p>
+        <Link to="/" className={styles.ctaLink}>
+          Browse fresh produce
+        </Link>
+      </section>
+    );
+  }
 
   return (
-    <div className={styles.cartPage}>
-      <h2>Your Cart</h2>
-      {items.map((item) => (
-        <CartItem key={item.id} item={item} onRemove={handleRemove} />
-      ))}
-      <CartSummary items={items} />
-    </div>
+    <section className={styles.cartPage}>
+      <header className={styles.cartHeader}>
+        <div>
+          <h2>Your Cart</h2>
+          {isSyncing && <p className={styles.syncStatus}>Syncing with AgroLink...</p>}
+          {lastSyncError && <p className={styles.syncError}>{lastSyncError}</p>}
+        </div>
+        <button type="button" className={styles.clearButton} onClick={clearCart}>
+          Clear cart
+        </button>
+      </header>
+      <div className={styles.cartList}>
+        {items.map((item) => (
+          <CartItem
+            key={item.id}
+            item={item}
+            onRemove={removeItem}
+            onUpdate={updateQuantity}
+          />
+        ))}
+      </div>
+      <CartSummary />
+    </section>
   );
 }
+export default CartPage;

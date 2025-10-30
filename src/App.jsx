@@ -24,6 +24,9 @@ import CheckoutPageContainer from "./pages/CheckoutPageContainer";
 import OrderPageContainer from "./pages/OrderPageContainer";
 import ChatPageContainer from "./pages/ChatPageContainer";
 
+// chat widget
+import ChatWidget from "./components/chat/ChatWidget";
+
 // Product management
 import ProductList from "./components/ProductList";
 import ProductForm from "./components/ProductForm";
@@ -114,6 +117,7 @@ function App() {
           
           <Route path="/cart" element={<Navigate to="/carts" replace />} />
         </Routes>
+        <ChatWidget />
       </div>
     </Router>
   );

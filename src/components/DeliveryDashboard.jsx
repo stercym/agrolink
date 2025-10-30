@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api } from "../Config.jsx"; // 
+import { api } from "../Config";
 import "./DashboardsAndProfile.css";
 
 const DeliveryDashboard = () => {

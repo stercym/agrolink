@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useCart } from "./cart/CartContext";
+import { useToast } from "./common/ToastProvider.jsx";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -7,6 +9,8 @@ function ProductDetails() {
   const [farmer, setFarmer] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { addItem } = useCart();
+  const { pushToast } = useToast();
 
   useEffect(() => {
     // Fetch product details
@@ -34,6 +38,28 @@ function ProductDetails() {
         setLoading(false);
       });
   }, [id]);
+
+  const handleAddToCart = () => {
+    if (!product || !product.is_available) {
+      return;
+    }
+
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: Number(product.price) || 0,
+      quantity: 1,
+      farmerId: product.farmer_id,
+      unit: product.unit,
+      image: product.image_uri,
+    });
+
+    pushToast({
+      type: "success",
+      title: "Added to cart",
+      message: `${product.name} is now in your basket.`,
+    });
+  };
 
   if (loading) return <p>Loading product...</p>;
   if (error) return <p style={{ color: "red" }}>Error: {error}</p>;
@@ -69,7 +95,9 @@ function ProductDetails() {
       )}
 
       <div style={{ marginTop: "15px" }}>
-        <button>Add to Cart</button>
+        <button onClick={handleAddToCart} disabled={!product.is_available}>
+          {product.is_available ? "Add to Cart" : "Unavailable"}
+        </button>
         <button style={{ marginLeft: "10px" }}>Contact Farmer</button>
       </div>
 
@@ -80,7 +108,3 @@ function ProductDetails() {
 }
 
 export default ProductDetails;
-
-
-
-
