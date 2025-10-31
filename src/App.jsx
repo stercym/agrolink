@@ -14,7 +14,6 @@ import FarmerDashboard from "./components/FarmerDashboard";
 import DeliveryDashboard from "./components/DeliveryDashboard";
 import Profile from "./components/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
-import DeliveryDashboardAgent from "./components/DeliveryDashboardAgent";
 import DeliveryTrackingBuyer from "./components/DeliveryTrackingBuyer";
 import DeliveryGroupSummary from "./components/DeliveryGroupSummary";
 
@@ -37,7 +36,7 @@ import "./App.css";
 // Wrapper components for route params
 function AgentDashboardWrapper() {
   const { id } = useParams();
-  return <DeliveryDashboardAgent agentId={id} />;
+  return <DeliveryDashboard agentId={id} />;
 }
 
 function TrackingWrapper() {

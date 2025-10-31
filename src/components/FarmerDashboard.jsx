@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../Config.jsx';
 import {
@@ -49,6 +49,8 @@ const FarmerDashboard = () => {
   const [assignSubmitting, setAssignSubmitting] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [assignmentError, setAssignmentError] = useState('');
+  const productFormRef = useRef(null);
+  const productNameInputRef = useRef(null);
 
   useEffect(() => {
     return () => {
@@ -503,6 +505,15 @@ const FarmerDashboard = () => {
     navigate('/login');
   };
 
+  const handleJumpToProductForm = () => {
+    if (productFormRef.current) {
+      productFormRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    window.requestAnimationFrame(() => {
+      productNameInputRef.current?.focus();
+    });
+  };
+
   const statCards = [
     {
       id: 'products',
@@ -569,7 +580,7 @@ const FarmerDashboard = () => {
         <header className="dashboard-header">
           <div className="dashboard-header-info">
             <h1 className="dashboard-title">
-              {user?.name ? `Good morning, ${user.name.split(' ')[0]}!` : 'Farmer dashboard'}
+              {user?.name ? `Hello, ${user.name.split(' ')[0]}!` : 'Farmer dashboard'}
             </h1>
             <p className="dashboard-subtitle">
               Monitor inventory, fulfil orders, and keep track of deliveries without leaving your farm.
@@ -580,7 +591,7 @@ const FarmerDashboard = () => {
               <button
                 type="button"
                 className="dashboard-btn is-primary"
-                onClick={() => navigate('/products/new')}
+                onClick={handleJumpToProductForm}
               >
                 <Plus size={18} />
                 Add Product
@@ -669,7 +680,11 @@ const FarmerDashboard = () => {
               </div>
             </div>
             <div className="dashboard-section__body">
-              <form className="catalog-form" onSubmit={handleCreateProduct}>
+              <form
+                ref={productFormRef}
+                className="catalog-form"
+                onSubmit={handleCreateProduct}
+              >
                 <div className="catalog-form__grid">
                   <label className="catalog-field">
                     <span className="catalog-field__label">Product name *</span>
@@ -678,6 +693,7 @@ const FarmerDashboard = () => {
                       name="name"
                       className="catalog-input"
                       value={productForm.name}
+                      ref={productNameInputRef}
                       onChange={handleProductFormChange}
                       required
                     />
