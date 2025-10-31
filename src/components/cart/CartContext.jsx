@@ -146,8 +146,8 @@ export function CartProvider({ children }) {
 
   const syncToServer = useCallback(
     async (overrideItems) => {
-      const { token, role } = extractAuth();
-      if (!token || role !== "buyer") {
+      const { token } = extractAuth();
+      if (!token) {
         setLastSyncError(null);
         lastToastMessageRef.current = null;
         return { success: false, skipped: true };

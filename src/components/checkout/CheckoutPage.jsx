@@ -82,8 +82,8 @@ export default function CheckoutPage() {
       }
     }
 
-    if (!token || role !== "buyer") {
-      const message = "Please sign in as a buyer to place an order.";
+    if (!token) {
+      const message = "Please sign in to place an order.";
       setStatus({ type: "error", message });
       pushToast({ type: "error", title: "Sign in required", message });
       navigate("/login", { replace: true, state: { redirectTo: "/checkout" } });

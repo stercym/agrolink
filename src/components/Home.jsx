@@ -112,17 +112,19 @@ const Home = () => {
       return;
     }
 
-    if (user.role !== "buyer") {
-      pushToast({
-        type: "error",
-        title: "Access restricted",
-        message: "Checkout is only available to buyers.",
-      });
-      navigate("/login");
+    navigate("/checkout");
+  };
+
+  const handleCartRedirect = () => {
+    const user = getStoredUser();
+    const tokenFromStorage = localStorage.getItem("token");
+
+    if (!tokenFromStorage || !user) {
+      navigate("/login", { state: { redirectTo: "/carts" } });
       return;
     }
 
-    navigate("/checkout");
+    navigate("/carts");
   };
 
   const handleRedirect = (role) => {
