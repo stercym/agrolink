@@ -1,0 +1,108 @@
+.verification-container {
+  min-height: calc(100vh - 4rem);
+  padding: 4rem 1.5rem 3rem;
+  background: linear-gradient(135deg, #f0fff4 0%, #e4f7ec 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verification-card {
+  width: min(520px, 100%);
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 2.75rem clamp(1.75rem, 5vw, 3rem);
+  box-shadow: 0 32px 80px rgba(23, 78, 59, 0.12);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: #1f5135;
+}
+
+.verification-card h1 {
+  margin: 0;
+  font-size: clamp(1.85rem, 4vw, 2.3rem);
+}
+
+.verification-card p {
+  margin: 0 auto;
+  max-width: 420px;
+  line-height: 1.65;
+  color: #4b6355;
+}
+
+.verification-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  box-shadow: 0 18px 32px rgba(33, 90, 57, 0.18);
+}
+
+.verification-card.success .verification-icon {
+  background: linear-gradient(135deg, #2b7a4b, #43b079);
+}
+
+.verification-card.error .verification-icon {
+  background: linear-gradient(135deg, #b3261e, #e05444);
+  box-shadow: 0 18px 32px rgba(179, 38, 30, 0.24);
+}
+
+.verification-card.success h1 {
+  color: #1f5135;
+}
+
+.verification-card.error h1 {
+  color: #b3261e;
+}
+
+.verification-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 16px;
+  padding: 0.95rem 1.75rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2b7a4b, #43b079);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.verification-card.error .verification-action {
+  background: linear-gradient(135deg, #b3261e, #e05444);
+}
+
+.verification-action:hover,
+.verification-action:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(27, 102, 60, 0.28);
+}
+
+.verification-card.error .verification-action:hover,
+.verification-card.error .verification-action:focus-visible {
+  box-shadow: 0 20px 45px rgba(179, 38, 30, 0.28);
+}
+
+@media (max-width: 640px) {
+  .verification-card {
+    padding: 2.25rem 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .verification-action {
+    transition: none;
+  }
+
+  .verification-action:hover,
+  .verification-action:focus-visible {
+    transform: none;
+    box-shadow: none;
+  }
+}
