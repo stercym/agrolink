@@ -105,16 +105,21 @@ function NavBar() {
               How It Works
             </Link>
           </li>
-          <li>
-            <Link to="/products" className="nav-item" onClick={closeMenu}>
-              Products
-            </Link>
-          </li>
-          <li>
-            <Link to="/carts" className="nav-item" onClick={closeMenu}>
-              Cart
-            </Link>
-          </li>
+          {token && (
+            <>
+              <li>
+                <Link to="/products" className="nav-item" onClick={closeMenu}>
+                  Products
+                </Link>
+              </li>
+              </>
+          )}
+              <li>
+                <Link to="/carts" className="nav-item" onClick={closeMenu}>
+                  Cart
+                </Link>
+              </li>
+            
         </ul>
 
         <div className="nav-auth">
